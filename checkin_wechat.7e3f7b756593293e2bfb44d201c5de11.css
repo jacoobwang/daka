@@ -1,0 +1,906 @@
+.hide {
+  display: none;
+}
+img {
+  border: none;
+}
+hr {
+  color: #209e85;
+  padding: 0 10px;
+  border-top: 1px solid #209e85;
+  border-bottom: 1px solid #ffffff;
+}
+a {
+  outline-style: none;
+  outline-width: 0px;
+}
+a:hover,a:active{outline:none;}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+html,
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  word-wrap: break-word;
+}
+#head-container {
+  background: #209e85;
+  border-bottom: 1px solid #1c967e;
+}
+#head-container img {
+  height: 38px;
+  padding: 5px 10px;
+}
+#head-container .menu {
+  padding: 10px 10px;
+  position: absolute;
+  right: 0px;
+  height: 28px;
+}
+#head-container .menuhover {
+  color: red;
+}
+#nav-bar {
+  position: absolute;
+  top: 48px;
+  width: 100%;
+  height: 100%;
+  background: #f1f0e3;
+  z-index: 100;
+  padding: 0px 0px 20px;
+}
+#nav-bar .nav-triangle {
+  position: absolute;
+  top: -20px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #f1f0e3;
+  overflow: hidden;
+  z-index: 1;
+}
+#nav-bar .mobile-apps {
+  padding: 20px 10px 0px 10px;
+}
+#nav-bar .mobile-apps .title-line {
+  color: #209e85;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+#nav-bar .mobile-apps .title-line .title {
+  position: relative;
+  top: -20px;
+  background: #f1f0e3;
+  padding: 0 10px;
+}
+#nav-bar .mobile-apps .app-item {
+  padding-bottom: 10px;
+}
+#nav-bar .mobile-apps .app-item a {
+  color: black;
+  text-decoration: none;
+}
+#nav-bar .mobile-apps .app-item a img {
+  width: 32px;
+}
+#nav-bar .mobile-apps .app-item a .description {
+  position: relative;
+  top: -10px;
+  font-size: 15px;
+}
+#nav-bar .mobile-apps .app-item .btn-download {
+  position: absolute;
+  right: 10px;
+  border-radius: 2px;
+  background: none;
+  padding: 2px 8px;
+  border: solid 1px #209e85;
+  color: #209e85;
+  text-shadow: none;
+}
+#nav-bar .web-apps {
+  font-size: 15px;
+  padding: 10px 10px 30px 10px;
+}
+#nav-bar .web-apps .title-line {
+  color: #209e85;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+#nav-bar .web-apps .title-line .title {
+  position: relative;
+  top: -20px;
+  background: #f1f0e3;
+  padding: 0 10px;
+}
+#nav-bar .web-apps table {
+  width: 100%;
+}
+#nav-bar .web-apps table a {
+  color: black;
+  text-decoration: none;
+}
+#nav-bar .web-apps table a img {
+  height: 26px;
+}
+#nav-bar .web-apps table a .description {
+  position: relative;
+  top: -10px;
+  padding-left: 5px;
+}
+.info-bar {
+  position: relative;
+  top: -4px;
+  height: 120px;
+  border-top: 3px solid #1a8770;
+  background: #209e85;
+  color: white;
+  text-align: center;
+}
+#user-info {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+#user-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  box-shadow: 0 0 4px gray;
+  background: white;
+}
+#user-decoration {
+  position: relative;
+  top: -10px;
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 120px;
+  color: #1b8773;
+}
+#checkin-info {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+#username {
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 80px;
+  overflow: hidden;
+}
+#days-count {
+  font-size: 42px;
+  height: 60px;
+  font-weight: bold;
+}
+.calendar {
+}
+.calendar .cal-header {
+  text-align: center;
+  height: 40px;
+  font-size: 24px;
+  line-height: 40px;
+}
+.calendar .cal-header .ctrl {
+  font-size: 38px;
+  color: silver;
+}
+.calendar .cal-header .ctrl-active {
+  color: #209e85;
+}
+.calendar .cal-header .btn {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+.calendar .cal-header #prev {
+  position: absolute;
+  left: 15px;
+}
+.calendar .cal-header #next {
+  position: absolute;
+  right: 15px;
+}
+.calendar .cal-body {
+  width: 100%;
+}
+.calendar .cal-body table {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+.calendar .cal-body table tr:nth-of-type(2) th {
+  font-weight: normal;
+  font-size: 14px;
+}
+.calendar .cal-body table tr:nth-of-type(3) {
+  height: 54px;
+}
+.calendar .cal-body table th {
+  font-weight: normal;
+  font-size: 14px;
+  height: 26px;
+  border-bottom: 1px dotted silver;
+}
+.calendar .cal-body table td {
+  width: 40px;
+  height: 42px;
+}
+.calendar .cal-body table td .cell {
+  margin: 4px auto;
+  line-height: 34px;
+  text-align: center;
+  width: 34px;
+  height: 34px;
+}
+.calendar .cal-body table .month {
+  display: none;
+}
+.calendar .cal-body table .done {
+  border-radius: 34px;
+  color: white;
+  background: #4dc3a9;
+}
+.calendar .cal-body table .undo {
+  color: silver;
+}
+#diagram {
+  position: fixed;
+  bottom: 30px;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+}
+#diagram .hint-dot {
+  padding: 1px 10px;
+  background: #4dc3a9;
+  border-radius: 12px;
+  margin-right: 10px;
+}
+.download-info {
+  margin: 0px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #eeeded;
+  opacity: 0.8;
+}
+/* style for iPad only */
+.ipad #nav-bar .mobile-apps {
+  padding: 40px 20px 0px 20px;
+}
+.ipad #nav-bar .mobile-apps .title-line {
+  color: #209e85;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 30px;
+}
+.ipad #nav-bar .mobile-apps .title-line .title {
+  position: relative;
+  top: -40px;
+  background: #f1f0e3;
+  padding: 0 20px;
+}
+.ipad #nav-bar .mobile-apps .app-item {
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+.ipad #nav-bar .mobile-apps .app-item a {
+  color: black;
+  text-decoration: none;
+}
+.ipad #nav-bar .mobile-apps .app-item a img {
+  width: 64px;
+}
+.ipad #nav-bar .mobile-apps .app-item a .description {
+  position: relative;
+  font-size: 30px;
+  top: -20px;
+}
+.ipad #nav-bar .mobile-apps .app-item .btn-download {
+  position: absolute;
+  right: 20px;
+  border-radius: 6px;
+  background: none;
+  padding: 4px 16px;
+  border: solid 1px #209e85;
+  color: #209e85;
+  text-shadow: none;
+}
+.ipad #nav-bar .web-apps {
+  font-size: 30px;
+  padding: 20px 20px 60px 20px;
+}
+.ipad #nav-bar .web-apps .title-line {
+  color: #209e85;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 30px;
+}
+.ipad #nav-bar .web-apps .title-line .title {
+  position: relative;
+  top: -40px;
+  background: #f1f0e3;
+  padding: 0 20px;
+}
+.ipad #nav-bar .web-apps table {
+  width: 100%;
+}
+.ipad #nav-bar .web-apps table a {
+  color: black;
+  text-decoration: none;
+}
+.ipad #nav-bar .web-apps table a img {
+  height: 52px;
+}
+.ipad #nav-bar .web-apps table a .description {
+  position: relative;
+  top: -20px;
+  padding-left: 10px;
+}
+.ipad .info-bar {
+  position: relative;
+  top: -4px;
+  height: 200px;
+  border-top: 6px solid #1a8770;
+  background: #209e85;
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+}
+.ipad #user-info {
+  position: absolute;
+  left: 40px;
+  top: 20px;
+}
+.ipad #user-info img {
+  width: 120px;
+  height: 120px;
+  border-radius: 120px;
+  box-shadow: 0 0 8px gray;
+  background: white;
+}
+.ipad #user-decoration {
+  position: relative;
+  top: -30px;
+  font-size: 76px;
+  font-weight: bold;
+  line-height: 240px;
+  color: #1b8773;
+}
+.ipad #checkin-info {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+.ipad #username {
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 160px;
+  overflow: hidden;
+}
+.ipad #days-count {
+  font-size: 90px;
+  height: 120px;
+  font-weight: bold;
+}
+.ipad .calendar {
+  margin: 0px 20px 100px;
+}
+.ipad .calendar .cal-header {
+  text-align: center;
+  height: 80px;
+  font-size: 48px;
+  line-height: 80px;
+}
+.ipad .calendar .cal-header .ctrl {
+  font-size: 76px;
+  color: silver;
+}
+.ipad .calendar .cal-header .ctrl-active {
+  color: #209e85;
+}
+.ipad .calendar .cal-header .btn {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+.ipad .calendar .cal-header #prev {
+  position: absolute;
+  left: 30px;
+}
+.ipad .calendar .cal-header #next {
+  position: absolute;
+  right: 30px;
+}
+.ipad .calendar .cal-body {
+  width: 100%;
+}
+.ipad .calendar .cal-body table {
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+}
+.ipad .calendar .cal-body table tr:nth-of-type(2) th {
+  font-weight: normal;
+  font-size: 28px;
+}
+.ipad .calendar .cal-body table tr:nth-of-type(3) {
+  height: 108px;
+}
+.ipad .calendar .cal-body table th {
+  height: 52px;
+  border-bottom: 2px dotted silver;
+}
+.ipad .calendar .cal-body table td {
+  width: 80px;
+  height: 84px;
+}
+.ipad .calendar .cal-body table td .cell {
+  margin: 8px auto;
+  line-height: 68px;
+  text-align: center;
+  width: 68px;
+  height: 68px;
+}
+.ipad .calendar .cal-body table .month {
+  display: none;
+}
+.ipad .calendar .cal-body table .done {
+  border-radius: 68px;
+  color: white;
+  background: #4dc3a9;
+}
+.ipad .calendar .cal-body table .undo {
+  color: silver;
+}
+.ipad #diagram {
+  position: static;
+  bottom: 40px;
+  height: 80px;
+  width: 100%;
+  line-height: 80px;
+  text-align: center;
+  background: #eeeded;
+  font-size: 2em;
+}
+.ipad #diagram .hint-dot {
+  color: #4dc3a9;
+}
+/* iPad Tablet landscape three-col-right */
+@media only screen and (width: 1024px) {
+  #nav-bar .mobile-apps {
+    padding: 40px 20px 0px 20px;
+  }
+  #nav-bar .mobile-apps .title-line {
+    color: #209e85;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+  }
+  #nav-bar .mobile-apps .title-line .title {
+    position: relative;
+    top: -40px;
+    background: #f1f0e3;
+    padding: 0 20px;
+  }
+  #nav-bar .mobile-apps .app-item {
+    padding-bottom: 20px;
+    font-size: 30px;
+  }
+  #nav-bar .mobile-apps .app-item a {
+    color: black;
+    text-decoration: none;
+  }
+  #nav-bar .mobile-apps .app-item a img {
+    width: 64px;
+  }
+  #nav-bar .mobile-apps .app-item a .description {
+    position: relative;
+    font-size: 30px;
+    top: -20px;
+  }
+  #nav-bar .mobile-apps .app-item .btn-download {
+    position: absolute;
+    right: 20px;
+    border-radius: 6px;
+    background: none;
+    padding: 4px 16px;
+    border: solid 1px #209e85;
+    color: #209e85;
+    text-shadow: none;
+  }
+  #nav-bar .web-apps {
+    font-size: 30px;
+    padding: 20px 20px 60px 20px;
+  }
+  #nav-bar .web-apps .title-line {
+    color: #209e85;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+  }
+  #nav-bar .web-apps .title-line .title {
+    position: relative;
+    top: -40px;
+    background: #f1f0e3;
+    padding: 0 20px;
+  }
+  #nav-bar .web-apps table {
+    width: 100%;
+  }
+  #nav-bar .web-apps table a {
+    color: black;
+    text-decoration: none;
+  }
+  #nav-bar .web-apps table a img {
+    height: 52px;
+  }
+  #nav-bar .web-apps table a .description {
+    position: relative;
+    top: -20px;
+    padding-left: 10px;
+  }
+  .info-bar {
+    position: relative;
+    top: -4px;
+    height: 200px;
+    border-top: 6px solid #1a8770;
+    background: #209e85;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  #user-info {
+    position: absolute;
+    left: 40px;
+    top: 20px;
+  }
+  #user-info img {
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+    box-shadow: 0 0 8px gray;
+    background: white;
+  }
+  #user-decoration {
+    position: relative;
+    top: -30px;
+    font-size: 76px;
+    font-weight: bold;
+    line-height: 240px;
+    color: #1b8773;
+  }
+  #checkin-info {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+  }
+  #username {
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 160px;
+    overflow: hidden;
+  }
+  #days-count {
+    font-size: 90px;
+    height: 120px;
+    font-weight: bold;
+  }
+  .calendar {
+    margin: 0px 20px 100px;
+  }
+  .calendar .cal-header {
+    text-align: center;
+    height: 80px;
+    font-size: 48px;
+    line-height: 80px;
+  }
+  .calendar .cal-header .ctrl {
+    font-size: 76px;
+    color: silver;
+  }
+  .calendar .cal-header .ctrl-active {
+    color: #209e85;
+  }
+  .calendar .cal-header .btn {
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+  .calendar .cal-header #prev {
+    position: absolute;
+    left: 30px;
+  }
+  .calendar .cal-header #next {
+    position: absolute;
+    right: 30px;
+  }
+  .calendar .cal-body {
+    width: 100%;
+  }
+  .calendar .cal-body table {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+  }
+  .calendar .cal-body table tr:nth-of-type(2) th {
+    font-weight: normal;
+    font-size: 28px;
+  }
+  .calendar .cal-body table tr:nth-of-type(3) {
+    height: 108px;
+  }
+  .calendar .cal-body table th {
+    height: 52px;
+    border-bottom: 2px dotted silver;
+  }
+  .calendar .cal-body table td {
+    width: 80px;
+    height: 84px;
+  }
+  .calendar .cal-body table td .cell {
+    margin: 8px auto;
+    line-height: 68px;
+    text-align: center;
+    width: 68px;
+    height: 68px;
+  }
+  .calendar .cal-body table .month {
+    display: none;
+  }
+  .calendar .cal-body table .done {
+    border-radius: 68px;
+    color: white;
+    background: #4dc3a9;
+  }
+  .calendar .cal-body table .undo {
+    color: silver;
+  }
+  #diagram {
+    position: static;
+    bottom: 40px;
+    height: 80px;
+    width: 100%;
+    line-height: 80px;
+    text-align: center;
+    background: #eeeded;
+    font-size: 2em;
+  }
+  #diagram .hint-dot {
+    color: #4dc3a9;
+  }
+}
+/* iPad Tablet portrait one-col-vert */
+@media only screen and (width: 768px) {
+  #nav-bar .mobile-apps {
+    padding: 40px 20px 0px 20px;
+  }
+  #nav-bar .mobile-apps .title-line {
+    color: #209e85;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+  }
+  #nav-bar .mobile-apps .title-line .title {
+    position: relative;
+    top: -40px;
+    background: #f1f0e3;
+    padding: 0 20px;
+  }
+  #nav-bar .mobile-apps .app-item {
+    padding-bottom: 20px;
+    font-size: 30px;
+  }
+  #nav-bar .mobile-apps .app-item a {
+    color: black;
+    text-decoration: none;
+  }
+  #nav-bar .mobile-apps .app-item a img {
+    width: 64px;
+  }
+  #nav-bar .mobile-apps .app-item a .description {
+    position: relative;
+    font-size: 30px;
+    top: -20px;
+  }
+  #nav-bar .mobile-apps .app-item .btn-download {
+    position: absolute;
+    right: 20px;
+    border-radius: 6px;
+    background: none;
+    padding: 4px 16px;
+    border: solid 1px #209e85;
+    color: #209e85;
+    text-shadow: none;
+  }
+  #nav-bar .web-apps {
+    font-size: 30px;
+    padding: 20px 20px 60px 20px;
+  }
+  #nav-bar .web-apps .title-line {
+    color: #209e85;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+  }
+  #nav-bar .web-apps .title-line .title {
+    position: relative;
+    top: -40px;
+    background: #f1f0e3;
+    padding: 0 20px;
+  }
+  #nav-bar .web-apps table {
+    width: 100%;
+  }
+  #nav-bar .web-apps table a {
+    color: black;
+    text-decoration: none;
+  }
+  #nav-bar .web-apps table a img {
+    height: 52px;
+  }
+  #nav-bar .web-apps table a .description {
+    position: relative;
+    top: -20px;
+    padding-left: 10px;
+  }
+  .info-bar {
+    position: relative;
+    top: -4px;
+    height: 200px;
+    border-top: 6px solid #1a8770;
+    background: #209e85;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  #user-info {
+    position: absolute;
+    left: 40px;
+    top: 20px;
+  }
+  #user-info img {
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+    box-shadow: 0 0 8px gray;
+    background: white;
+  }
+  #user-decoration {
+    position: relative;
+    top: -30px;
+    font-size: 76px;
+    font-weight: bold;
+    line-height: 240px;
+    color: #1b8773;
+  }
+  #checkin-info {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+  }
+  #username {
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 160px;
+    overflow: hidden;
+  }
+  #days-count {
+    font-size: 90px;
+    height: 120px;
+    font-weight: bold;
+  }
+  .calendar {
+    margin: 0px 20px 100px;
+  }
+  .calendar .cal-header {
+    text-align: center;
+    height: 80px;
+    font-size: 48px;
+    line-height: 80px;
+  }
+  .calendar .cal-header .ctrl {
+    font-size: 76px;
+    color: silver;
+  }
+  .calendar .cal-header .ctrl-active {
+    color: #209e85;
+  }
+  .calendar .cal-header .btn {
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+  .calendar .cal-header #prev {
+    position: absolute;
+    left: 30px;
+  }
+  .calendar .cal-header #next {
+    position: absolute;
+    right: 30px;
+  }
+  .calendar .cal-body {
+    width: 100%;
+  }
+  .calendar .cal-body table {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+  }
+  .calendar .cal-body table tr:nth-of-type(2) th {
+    font-weight: normal;
+    font-size: 28px;
+  }
+  .calendar .cal-body table tr:nth-of-type(3) {
+    height: 108px;
+  }
+  .calendar .cal-body table th {
+    height: 52px;
+    border-bottom: 2px dotted silver;
+  }
+  .calendar .cal-body table td {
+    width: 80px;
+    height: 84px;
+  }
+  .calendar .cal-body table td .cell {
+    margin: 8px auto;
+    line-height: 68px;
+    text-align: center;
+    width: 68px;
+    height: 68px;
+  }
+  .calendar .cal-body table .month {
+    display: none;
+  }
+  .calendar .cal-body table .done {
+    border-radius: 68px;
+    color: white;
+    background: #4dc3a9;
+  }
+  .calendar .cal-body table .undo {
+    color: silver;
+  }
+  #diagram {
+    position: static;
+    bottom: 40px;
+    height: 80px;
+    width: 100%;
+    line-height: 80px;
+    text-align: center;
+    background: #eeeded;
+    font-size: 2em;
+  }
+  #diagram .hint-dot {
+    color: #4dc3a9;
+  }
+}

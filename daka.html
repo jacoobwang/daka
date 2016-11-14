@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>打卡小工具-最好用的小工具</title>
+  <link href="checkin_wechat.7e3f7b756593293e2bfb44d201c5de11.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="shanbay-fontawesome-v3.css">
+  <style type="text/css">
+    a{
+      text-decoration: none;
+    }
+    ul,li{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .s-skin-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -5;
+    }
+    .s-skin-container li {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background-position: center 0;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      zoom: 1;
+    }
+    .star{
+      width:100px;
+      height:100px;
+      position:absolute;
+      bottom:12%;
+      left:42%;
+      margin-left:-20px;
+      margin-top:-20px;
+      -webkit-transform:scale(0);
+      -webkit-animation-name:janim;
+      -webkit-animation-duration:.3s;
+      -webkit-animation-timing-function:linear;
+      -webkit-animation-direction:normal;
+      -webkit-animation-fill-mode:forwards;
+    }
+    .star a{
+      position: absolute;
+      z-index: 1000;
+      height: 100px;
+      width: 100px;
+      display: block;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+    }
+    .star s{
+      width:100px;
+      height:100px;
+      display:block;
+      border-radius:50px;
+      background-color:#4dc3a9;
+      position:absolute;
+    }
+    .star b{
+      width:100px;
+      height:100px;
+      display:block;
+      border-radius:50px;
+      position:absolute;
+      background-color:#4dc3a9;
+      -webkit-transform:scale(2);
+      opacity:.2;
+      -webkit-animation:zdjpop .8s infinite;
+    }
+    @-webkit-keyframes janim {
+      0% {
+        -webkit-transform:scale(0.2);
+      }
+      50% {
+        -webkit-transform:scale(1.2);
+      }
+      100% {
+        -webkit-transform:scale(1);
+      }
+      }
+      @-webkit-keyframes zdjpop {
+      0% {
+        opacity:1;
+        -webkit-transform:scale(1);
+      }
+      100% {
+        opacity:0;
+        -webkit-transform:scale(1.5);
+      }
+    }
+
+  .personInfo p{position:absolute;left:26%;top:10%;font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;font-size:20px;}
+	.personInfo input{position:absolute;left:20%;bottom:43%;height:30px;line-height:30px;text-align:center;}
+	.personInfo a{display:inline-block;position:absolute;left:30%;bottom:15%;width:100px;height:30px;line-height:30px;background:#4dc3a9;color:#fff;text-align:center;}
+	.daka_info p{text-align:center;margin:0;padding-bottom:10px;}
+	.daka_info p span{color:red;}
+  </style>
+</head>
+<body>
+  <ul class="s-skin-container">
+    <li class="" style="background-image: url(826840225658044791.jpg); display: list-item; z-index: 10;"></li>
+  </ul>
+  <div class="calendar">
+    <div class="cal-header">
+      <a class="icon-angle-left btn ctrl ctrl-active" id="prev" href=""></a>
+        <span id="date"></span> 
+      <a class="icon-angle-right btn ctrl ctrl-active" id="next" href=""></a>
+    </div>
+    <div id="dateTime" class="cal-body"></div>
+  </div>
+  <div class="daka_info">
+	<p>欢迎你，<span id="name"></span></p>
+	<p id="msg">本月累计打卡<span id="day_num"></span>天</p>
+  </div>
+  <div class="star">
+    <a href="javascript:doDakaAction()">打卡</a>
+    <s></s>
+    <b></b>
+  </div>
+  <div id="diagram">
+      <i class="hint-dot"></i> 已打卡
+  </div>
+  <div class="download-info">
+      Created By Jacoob
+  </div>
+</body>
+<script src="zepto.js"></script>
+<script src="layer/layer.js"></script>
+<script src="calendar-My.js"></script>
+<script src="daka.js"></script>
+</html>
