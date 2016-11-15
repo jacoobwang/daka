@@ -49,8 +49,18 @@ var oo = document.getElementById('dateTime');
   function setNickname(){
     var user = $('.personInfo input').val();
     if(user.length>0){
-      storage.setItem('user',user);
-      layer.closeAll();
+      sendData('data.php','?ret=1&user='+user,function(data){
+        if(data == 1){
+          storage.setItem('user',user);
+          layer.closeAll();
+        }else{
+          layer.open({
+            content: '该昵称已被占用'
+            ,skin: 'msg'
+            ,time: 2 //2秒后自动关闭
+          });
+        }
+      });   
     }else{
        layer.open({
         content: '请填写昵称'
@@ -83,11 +93,28 @@ var oo = document.getElementById('dateTime');
     storage.setItem(idx,JSON.stringify(data));
     isSign = true;
     $('.current .cell').addClass('done');
-    layer.open({
-        content: '打卡成功',
+    sendData('data.php','?ret=2&day='+now+'&user='+storage.getItem('user'),function(data){
+      var ms = '网络不好，稍后再试';
+      if(data == 1){
+        ms='打卡成功';
+        $('#day_num').html(parseInt($('#day_num').html())+1);
+      }
+      layer.open({
+        content: ms,
         btn: ['OK']
+      });
     });
-    $('#day_num').html(parseInt($('#day_num').html())+1);
+  }
+
+  function sendData(f, d, cb){
+    $.ajax({
+      url: "http://"+location.host+"/loadphp/daka/"+f,
+      type: "GET",
+      data : d,
+      success:function(data){
+        if(typeof(cb) == "function") cb(data);
+      } 
+    });
   }
 
   function setNavLink(){
