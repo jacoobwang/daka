@@ -50,8 +50,6 @@ var oo = document.getElementById('dateTime');
     var user = $('.personInfo input').val();
     if(user.length>0){
       storage.setItem('user',user);
-      $('#name').html(user);
-      $('#msg').html('瑜伽是一种修行，而打卡是一种仪式');
       layer.closeAll();
     }else{
        layer.open({

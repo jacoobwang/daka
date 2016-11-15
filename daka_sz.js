@@ -49,10 +49,18 @@ var oo = document.getElementById('dateTime');
   function setNickname(){
     var user = $('.personInfo input').val();
     if(user.length>0){
-      storage.setItem('user',user);
-      $('#name').html(user);
-      $('#msg').html('瑜伽是一种修行，而打卡是一种仪式');
-      layer.closeAll();
+      sendData('data.php','?ret=1&user='+user,function(data){
+        if(data == 1){
+          storage.setItem('user',user);
+          layer.closeAll();
+        }else{
+          layer.open({
+            content: '该昵称已被占用'
+            ,skin: 'msg'
+            ,time: 2 //2秒后自动关闭
+          });
+        }
+      });   
     }else{
        layer.open({
         content: '请填写昵称'
@@ -85,7 +93,7 @@ var oo = document.getElementById('dateTime');
     storage.setItem(idx,JSON.stringify(data));
     isSign = true;
     $('.current .cell').addClass('done');
-    sendData('data.php','?day='+now+'&user='+storage.getItem('user'),function(data){
+    sendData('data.php','?ret=2&day='+now+'&user='+storage.getItem('user'),function(data){
       var ms = '网络不好，稍后再试';
       if(data == 1){
         ms='打卡成功';
