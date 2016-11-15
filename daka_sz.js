@@ -85,12 +85,16 @@ var oo = document.getElementById('dateTime');
     storage.setItem(idx,JSON.stringify(data));
     isSign = true;
     $('.current .cell').addClass('done');
-    layer.open({
-        content: '打卡成功',
-        btn: ['OK']
-    });
     sendData('data.php','?day='+now+'&user='+storage.getItem('user'),function(data){
-      console.log(data);
+      var ms = '网络不好，稍后再试';
+      if(data == 1){
+        ms='打卡成功';
+        $('#day_num').html(parseInt($('#day_num').html())+1);
+      }
+      layer.open({
+        content: ms,
+        btn: ['OK']
+      });
     });
   }
 

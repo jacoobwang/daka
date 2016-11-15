@@ -89,6 +89,7 @@ var oo = document.getElementById('dateTime');
         content: '打卡成功',
         btn: ['OK']
     });
+    $('#day_num').html(parseInt($('#day_num').html())+1);
   }
 
   function setNavLink(){
