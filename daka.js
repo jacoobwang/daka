@@ -44,7 +44,64 @@ var oo = document.getElementById('dateTime');
     }
     var calendar = new Calendar(oo,ids,month);
     calendar.show();
+	$('.cell').click(function(){
+		  var _this = $(this),
+	         day = _this.html(),
+	         time = month + '-' + day,
+	         is_done = _this.hasClass("done");
+		if(is_done){
+			 layer.open({
+				content: '您确定要取消该次打卡吗？'
+				,btn: ['取消', '不要']
+				,yes: function(index){
+					layer.close(index);
+					$.each(data,function(i,item){
+						console.log(item);
+						if(item == time){
+							data.splice(i,1);
+						}
+					})
+				 }
+			 });
+			 storage.setItem(idx,JSON.stringify(data));
+			 _this.removeClass('done');
+       sendData('data.php','?ret=3&day='+time+'&name='+storage.getItem('user'));
+			 showMsg('取消成功');
+		}else{
+			if(month != idx){
+				showMsg('请回到'+date.getFullYear()+'年'+(date.getMonth()+1)+'月打卡哦，不允许超前或滞后打卡');
+				return false;
+			}
+			if(data != false){
+				if( $.inArray(time, data) != -1){
+					_this.addClass('done'); 
+					showMsg('打卡成功');
+				}else{
+					_this.addClass('done'); 
+					data.push(time);
+					storage.setItem(idx,JSON.stringify(data));
+					sendData('data.php','?ret=2&day='+time+'&name='+storage.getItem('user'));
+					showMsg('打卡成功');
+				}
+        if(time == now) isSign = true;
+			}
+      else{
+          data = new Array(time);
+          if(time == now) isSign = true;
+          storage.setItem(idx,JSON.stringify(data));
+          sendData('data.php','?ret=2&day='+time+'&name='+storage.getItem('user'));
+          showMsg('打卡成功');
+      }  
+		}
+	})
   } 
+
+  function showMsg(msg){
+	layer.open({
+		content: msg,
+		btn    : ['OK']
+	});
+  }
 
   function setNickname(){
     var user = $('.personInfo input').val();

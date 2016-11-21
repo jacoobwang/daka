@@ -25,4 +25,10 @@
             $rs = mysql_query($sql,$conn);
             if($rs != false) echo 1;
     }
+    if($ret == 3){
+        $sql = "delete from daka where sUser = '".$data['sUser']."' and sDay = '" .$data['sDay']."' limit 1";
+        $rs = mysql_query($sql);
+        echo 1;
+    }
+
 ?>
