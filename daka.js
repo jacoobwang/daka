@@ -60,13 +60,14 @@ var oo = document.getElementById('dateTime');
 						if(item == time){
 							data.splice(i,1);
 						}
-					})
+					});
+			 		storage.setItem(idx,JSON.stringify(data));
+			 		_this.removeClass('done');
+       					sendData('data.php','?ret=3&day='+time+'&name='+storage.getItem('user'));
+			 		showMsg('取消成功');
+					$('#day_num').html(parseInt($('#day_num').html())-1);
 				 }
 			 });
-			 storage.setItem(idx,JSON.stringify(data));
-			 _this.removeClass('done');
-       sendData('data.php','?ret=3&day='+time+'&name='+storage.getItem('user'));
-			 showMsg('取消成功');
 		}else{
 			if(month != idx){
 				showMsg('请回到'+date.getFullYear()+'年'+(date.getMonth()+1)+'月打卡哦，不允许超前或滞后打卡');
@@ -83,15 +84,17 @@ var oo = document.getElementById('dateTime');
 					sendData('data.php','?ret=2&day='+time+'&name='+storage.getItem('user'));
 					showMsg('打卡成功');
 				}
-        if(time == now) isSign = true;
+        			if(time == now) isSign = true;
+				$('#day_num').html(parseInt($('#day_num').html())+1);
 			}
-      else{
-          data = new Array(time);
-          if(time == now) isSign = true;
-          storage.setItem(idx,JSON.stringify(data));
-          sendData('data.php','?ret=2&day='+time+'&name='+storage.getItem('user'));
-          showMsg('打卡成功');
-      }  
+      			else{
+          			data = new Array(time);
+          			if(time == now) isSign = true;
+          			storage.setItem(idx,JSON.stringify(data));
+          			sendData('data.php','?ret=2&day='+time+'&name='+storage.getItem('user'));
+          			showMsg('打卡成功');
+				$('#day_num').html(parseInt($('#day_num').html())+1);
+      			}  
 		}
 	})
   } 
@@ -128,13 +131,10 @@ var oo = document.getElementById('dateTime');
   }
 
   function doDakaAction(){ 
-    if(isSign == true){
-      layer.open({
-          content: '今天已打过拉',
-          btn: ['OK']
-      });
-      return false;
-    }
+    if( $.inArray(now, data) != -1){
+	showMsg('今天已打过拉');
+	return false;
+    } 	  
     if(month != idx){
       layer.open({
           content: '请回到'+date.getFullYear()+'年'+(date.getMonth()+1)+'月打卡哦，不允许超前或滞后打卡',
